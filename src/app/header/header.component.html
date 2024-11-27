@@ -1,0 +1,15 @@
+<p>
+  Current Time : {{ currentTime }}
+  <span style="color: black">WELCOME {{ userData.name }}</span>
+</p>
+
+<br /><br />
+<span>{{ msgFromService }}</span>
+
+<button (click)="goToServicesPage()">SERVICES</button>
+<button (click)="goToClientsPage()">CLIENTS</button>
+<button routerLink="/clients/clientA">CLIENTS A</button>
+<br />
+<button (click)="sendMsg()">SEND MSG</button>
+
+<router-outlet></router-outlet>

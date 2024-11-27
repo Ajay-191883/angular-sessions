@@ -1,0 +1,29 @@
+<h1>{{ pageTitle }}</h1>
+<!-- STRUCTURE - * -->
+<!-- ATTRIBUTE - [] -->
+<!-- ngStyle -->
+<div [ngStyle]="{ color: divColor }">THIS IS A DIV</div>
+
+<input type="text" [(ngModel)]="userInput" />
+
+<br />
+
+<button (click)="divColor = userInput">COLOR CHANGE</button>
+
+<!-- ngClass -->
+
+<!-- <div class="adminDiv">HELLO</div> -->
+<div [ngClass]="{ adminDiv: false, userDiv: true }">HELLO</div>
+
+<!-- *ngFor -->
+
+<div *ngFor="let obj of objArray">
+  First Number : {{ obj.a }} Second Number : {{ obj.b }}
+</div>
+
+TASK UPDATE FROM CHILD - {{ taskUpdateFromChild }}
+
+<!-- CHILD -->
+
+<!-- // ARRAY -->
+<!-- <app-child></app-child> -->

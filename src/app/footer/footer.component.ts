@@ -27,40 +27,40 @@ export class FooterComponent {
     private dataService: DataService
   ) {}
 
-  messageFromService: string = '';
-  vowels$ = from(['a', 'e', 'i', 'o', 'u']);
-  vowelArr: any = [];
-  messageFromHeader: string = '';
-  ngOnInit() {
-    this.messageFromService = this.messageService.getMessage();
-    this.vowels$.subscribe((vowel: string) => {
-      this.vowelArr.push(vowel);
-    });
-    this.callApi();
-    this.callApi1();
-    this.dataService.dataChanged.subscribe((data: any) => {
-      this.messageFromHeader = data;
-    });
-  }
+  // messageFromService: string = '';
+  // vowels$ = from(['a', 'e', 'i', 'o', 'u']);
+  // vowelArr: any = [];
+  // messageFromHeader: string = '';
+  // ngOnInit() {
+  //   this.messageFromService = this.messageService.getMessage();
+  //   this.vowels$.subscribe((vowel: string) => {
+  //     this.vowelArr.push(vowel);
+  //   });
+  //   this.callApi();
+  //   this.callApi1();
+  //   this.dataService.dataChanged.subscribe((data: any) => {
+  //     this.messageFromHeader = data;
+  //   });
+  // }
 
-  callApi() {
-    fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then((response) => response.json())
-      .then((json) => console.log(json));
-  }
-  todos: any = '';
-  callApi1() {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/').subscribe({
-      next: (data: any) => {
-        this.todos = data; // Store the response in the `todos` array
-        console.log(data); // Log the data for debugging
-      },
-      error: (err) => {
-        console.error('Error occurred:', err); // Handle errors
-      },
-      complete: () => {
-        console.log('API call completed'); // Optional: Log completion
-      },
-    });
-  }
+  // callApi() {
+  //   fetch('https://jsonplaceholder.typicode.com/todos/')
+  //     .then((response) => response.json())
+  //     .then((json) => console.log(json));
+  // }
+  // todos: any = '';
+  // callApi1() {
+  //   this.http.get('https://jsonplaceholder.typicode.com/todos/').subscribe({
+  //     next: (data: any) => {
+  //       this.todos = data; // Store the response in the `todos` array
+  //       console.log(data); // Log the data for debugging
+  //     },
+  //     error: (err) => {
+  //       console.error('Error occurred:', err); // Handle errors
+  //     },
+  //     complete: () => {
+  //       console.log('API call completed'); // Optional: Log completion
+  //     },
+  //   });
+  // }
 }

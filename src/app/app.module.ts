@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ChildComponent } from './main/child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MainComponent,
     ChildComponent,
     PageNotFoundComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

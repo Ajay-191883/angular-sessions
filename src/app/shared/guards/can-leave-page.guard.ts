@@ -7,4 +7,5 @@ export const canLeavePageGuard: CanDeactivateFn<unknown> = (
   nextState
 ) => {
   return confirm('ARE U SURE, U WANT TO LEAVE?');
+  // return true;
 };

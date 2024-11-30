@@ -1,0 +1,69 @@
+<form #signUpForm="ngForm">
+  <p>
+    <label #firstNameLabel for="firstname">First Name</label>
+    <input
+      type="text"
+      id="firstname"
+      name="firstname"
+      ngModel
+      required
+      minlength="5"
+    />
+  </p>
+  <!-- <span>{{ userDetails.firstname }}</span> -->
+  <span
+    *ngIf="formSubmitted && signUpForm.form.controls['firstname']?.errors?.['required']"
+    >FIRST NAME IS REQUIRED</span
+  >
+  <span
+    *ngIf="formSubmitted && signUpForm.form.controls['firstname']?.errors?.['minlength']"
+    >MINIMUM 5 CHARACTERS REQUIRED</span
+  >
+
+  <p>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" ngModel required />
+  </p>
+
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" ngModel required />
+  </p>
+
+  <div ngModelGroup="otherDetails">
+    <p>
+      <label for="gender">Gender</label>
+      <input type="radio" value="male" id="gender" name="gender" ngModel /> Male
+      <input type="radio" value="female" id="gender" name="gender" ngModel />
+      Female
+    </p>
+
+    <p>
+      <label for="isMarried">Married</label>
+      <input type="checkbox" id="isMarried" name="isMarried" ngModel />
+    </p>
+  </div>
+
+  <p>
+    <label for="country">country </label>
+    <select name="country" id="country" ngModel>
+      <option selected="" value=""></option>
+      <option [ngValue]="c" *ngFor="let c of countryList">
+        {{ c.countryName }}
+      </option>
+    </select>
+  </p>
+
+  <p>
+    <button type="button" (click)="onResetForm()">RESET</button>
+    <button type="button" (click)="onSubmitForm()">
+      <!-- [disabled]="!signUpForm.valid" -->
+      SUBMIT
+    </button>
+    <button type="button" (click)="callApiToFetchDetails()">
+      FETCH DETAILS
+    </button>
+    <button type="button" (click)="setValue()">SET FORM</button>
+    <button type="button" (click)="patchValue()">PATCH FIRST NAME</button>
+  </p>
+</form>

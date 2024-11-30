@@ -6,28 +6,35 @@ import { ChildComponent } from './main/child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { authGuard } from './shared/guards/auth.guard';
 import { canLeavePageGuard } from './shared/guards/can-leave-page.guard';
+import { accessChildGuard } from './shared/guards/access-child.guard';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
+  // {
+  //   path: 'services/:serviceId',
+  //   component: MainComponent,
+  //   data: { pageTitle: 'SERVICES' },
+  // },
+  // {
+  //   path: 'clients',
+  //   component: HeaderComponent,
+  //   children: [
+  //     {
+  //       path: 'clientA',
+  //       component: ChildComponent,
+  //     },
+  //     {
+  //       path: '**',
+  //       redirectTo: 'clientA',
+  //     },
+  //   ],
+  //   canActivate: [authGuard],
+  //   canDeactivate: [canLeavePageGuard],
+  //   canActivateChild: [accessChildGuard],
+  // },
   {
-    path: 'services/:serviceId',
-    component: MainComponent,
-    data: { pageTitle: 'SERVICES' },
-  },
-  {
-    path: 'clients',
-    component: HeaderComponent,
-    children: [
-      {
-        path: 'clientA',
-        component: ChildComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'clientA',
-      },
-    ],
-    canActivate: [authGuard],
-    canDeactivate: [canLeavePageGuard],
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: '**',

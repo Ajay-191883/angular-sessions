@@ -1,0 +1,33 @@
+<form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+  <p>
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" formControlName="firstName" />
+    <span
+      *ngIf="
+        profileForm.get('firstName').invalid &&
+        profileForm.get('firstName').touched
+      "
+    >
+      <span *ngIf="profileForm.get('firstName').errors.minlength"
+        >Minimum 3 characters required
+      </span>
+      <span *ngIf="profileForm.get('firstName').errors.required"
+        >First name is required</span
+      >
+    </span>
+  </p>
+  <p>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" formControlName="lastName" />
+  </p>
+
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" formControlName="email" />
+  </p>
+
+  <p>
+    <button type="button" (click)="resetForm()">RESET</button>
+    <button type="submit" [disabled]="profileForm.invalid">SUBMIT</button>
+  </p>
+</form>

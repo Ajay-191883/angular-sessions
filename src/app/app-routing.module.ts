@@ -8,6 +8,9 @@ import { authGuard } from './shared/guards/auth.guard';
 import { canLeavePageGuard } from './shared/guards/can-leave-page.guard';
 import { accessChildGuard } from './shared/guards/access-child.guard';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { PipesRelatedComponent } from './pipes-related/pipes-related.component';
+import { HttpApiComponent } from './http-api/http-api.component';
 
 const routes: Routes = [
   // {
@@ -33,8 +36,24 @@ const routes: Routes = [
   //   canActivateChild: [accessChildGuard],
   // },
   {
+    path: '',
+    component: MainComponent,
+  },
+  {
     path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'reactive-form',
+    component: ReactiveFormComponent,
+  },
+  {
+    path: 'pipe-related',
+    component: PipesRelatedComponent,
+  },
+  {
+    path: 'http-api',
+    component: HttpApiComponent,
   },
   {
     path: '**',

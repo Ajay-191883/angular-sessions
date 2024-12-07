@@ -26,4 +26,16 @@ TASK UPDATE FROM CHILD - {{ taskUpdateFromChild }}
 <!-- CHILD -->
 
 <!-- // ARRAY -->
-<!-- <app-child></app-child> -->
+<app-child
+  [fullName]="FULL_NAME"
+  (taskUpdate)="updateTaskValue($event)"
+></app-child>
+
+<div>
+  <!-- <button (click)="--stepCount">BACK</button> -->
+  <!-- <button (click)="++stepCount">NEXT</button> -->
+  <!-- <app-personalDetailsForm *ngIf="stepCount == 1"></app-personalDetailsForm> -->
+  <!-- <app-contactDetailsForm *ngIf="stepCount == 2"></app-contactDetailsForm> -->
+  <!-- <app-confirmationDetailsForm *ngIf="stepCount == 3"></app-confirmationDetailsForm> -->
+  <!-- SAVE () child to parent - EVENTEMITTER -->
+</div>

@@ -24,22 +24,21 @@ export class ChildComponent implements OnInit {
 
   // @Input() childObjFromParent: any = null;
 
-  // @Output() taskUpdate = new EventEmitter<string>();
-
-  // sendTaskUpdate() {
-  //   this.taskUpdate.emit('COMPLETE');
-  // }
-
   // showValue: string = '';
 
   // focusInput() {
   //   this.childInput.nativeElement.style.backgroundColor = 'lightblue';
   // }
-
-  //OnInit
-  ngOnInit(): void {}
-
   // ngAfterViewInit() {
   //   this.focusInput();
   // }
+
+  @Input('fullName') fullName: string = '';
+  @Output() taskUpdate = new EventEmitter();
+
+  sendTaskUpdate() {
+    this.taskUpdate.emit('COMPLETE');
+  }
+
+  ngOnInit(): void {}
 }

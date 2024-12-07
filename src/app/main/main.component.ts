@@ -74,4 +74,8 @@ export class MainComponent {
 
     // PARAM, QUERYPARAM, FRAGMENT, DATA
   }
+
+  updateTaskValue(updatedValue: any) {
+    this.taskUpdateFromChild = updatedValue;
+  }
 }

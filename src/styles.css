@@ -9,9 +9,8 @@ p {
   color: rgb(23, 11, 255);
 }
 
-*,
 body {
   padding: 0;
   margin: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }

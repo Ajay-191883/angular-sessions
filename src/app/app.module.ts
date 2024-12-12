@@ -17,12 +17,13 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ChildComponent } from './main/child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipesRelatedComponent } from './pipes-related/pipes-related.component';
 import { HttpApiComponent } from './http-api/http-api.component';
-import { CommonService } from './services/common.service';
 import { HttpApiInterceptor } from './services/http-api.interceptor';
+import { SignupModule } from './signup/signup.module';
+import { AccountsModule } from './accounts/accounts.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,6 @@ import { HttpApiInterceptor } from './services/http-api.interceptor';
     MainComponent,
     ChildComponent,
     PageNotFoundComponent,
-    SignupComponent,
     ReactiveFormComponent,
     PipesRelatedComponent,
     HttpApiComponent,
@@ -40,6 +40,9 @@ import { HttpApiInterceptor } from './services/http-api.interceptor';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    SignupModule,
+    AccountsModule,
+    ProductsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

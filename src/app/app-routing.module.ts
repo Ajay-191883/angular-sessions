@@ -7,7 +7,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { authGuard } from './shared/guards/auth.guard';
 import { canLeavePageGuard } from './shared/guards/can-leave-page.guard';
 import { accessChildGuard } from './shared/guards/access-child.guard';
-import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { PipesRelatedComponent } from './pipes-related/pipes-related.component';
 import { HttpApiComponent } from './http-api/http-api.component';
@@ -38,10 +37,6 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
   },
   {
     path: 'reactive-form',

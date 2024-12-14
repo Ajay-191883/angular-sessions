@@ -22,8 +22,9 @@ import { PipesRelatedComponent } from './pipes-related/pipes-related.component';
 import { HttpApiComponent } from './http-api/http-api.component';
 import { HttpApiInterceptor } from './services/http-api.interceptor';
 import { SignupModule } from './signup/signup.module';
-import { AccountsModule } from './accounts/accounts.module';
 import { ProductsModule } from './products/products.module';
+import { SharedModuleModule } from './shared-module/shared-module.module';
+import { CoreModuleModule } from './core-module/core-module.module';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,8 @@ import { ProductsModule } from './products/products.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CoreModuleModule,
     SignupModule,
-    AccountsModule,
-    ProductsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -50,6 +50,7 @@ import { ProductsModule } from './products/products.module';
     ButtonModule,
     ProgressSpinnerModule,
     ToastModule,
+    SharedModuleModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpApiInterceptor, multi: true },

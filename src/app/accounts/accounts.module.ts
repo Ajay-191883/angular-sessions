@@ -4,6 +4,7 @@ import { SavingsComponent } from './savings/savings.component';
 import { CurrentComponent } from './current/current.component';
 import { FixedDepositsComponent } from './fixed-deposits/fixed-deposits.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 const accountsRoutes: Routes = [
   {
@@ -22,6 +23,6 @@ const accountsRoutes: Routes = [
 
 @NgModule({
   declarations: [SavingsComponent, CurrentComponent, FixedDepositsComponent],
-  imports: [CommonModule, RouterModule.forChild(accountsRoutes)],
+  imports: [SharedModuleModule, RouterModule.forChild(accountsRoutes)],
 })
 export class AccountsModule {}

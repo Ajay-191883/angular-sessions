@@ -51,6 +51,16 @@ const routes: Routes = [
     component: HttpApiComponent,
   },
   {
+    path: 'accounts',
+    loadChildren: () =>
+      import('./accounts/accounts.module').then((mod) => mod.AccountsModule),
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./products/products.module').then((mod) => mod.ProductsModule),
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
